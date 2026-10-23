@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#061522">
+<title>ESKUL INFORMATIKA</title>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&family=Share+Tech+Mono&display=swap" rel="stylesheet">
+<style>
+:root{--cyan:#00eaff;--blue:#008cff;--panel:rgba(3,20,36,.9)}
+*{margin:0;padding:0;box-sizing:border-box}
+body{min-height:100vh;font-family:Poppins,sans-serif;background:#03070d;color:white;overflow-x:hidden}
+button,a{font:inherit;-webkit-tap-highlight-color:transparent}
+.slideshow{position:fixed;inset:0;z-index:-3;background:#03070d;overflow:hidden}
+.slide{position:absolute;inset:0;background-size:cover;background-position:center;background-repeat:no-repeat;opacity:0;animation:slideshow 65s infinite}
+.slide:nth-child(1){background-image:url("lance1.png");animation-delay:0s}
+.slide:nth-child(2){background-image:url("leo.png");animation-delay:5s}
+.slide:nth-child(3){background-image:url("tank.png");animation-delay:10s}
+.slide:nth-child(4){background-image:url("mid.png");animation-delay:15s}
+.slide:nth-child(5){background-image:url("vexa.png");animation-delay:20s}
+.slide:nth-child(6){background-image:url("ling.jpg");animation-delay:25s}
+.slide:nth-child(7){background-image:url("lunok.png");animation-delay:30s}
+.slide:nth-child(8){background-image:url("sele.png");animation-delay:35s}
+.slide:nth-child(9){background-image:url("kadita.png");animation-delay:40s}
+.slide:nth-child(10){background-image:url("beatrix.png");animation-delay:45s}
+.slide:nth-child(11){background-image:url("kari.png");animation-delay:50s}
+.slide:nth-child(12){background-image:url("bened.png");animation-delay:55s}
+.slide:nth-child(13){background-image:url("pharsa.png");animation-delay:60s}
+@keyframes slideshow{0%{opacity:0;transform:scale(1.07)}3%,8%{opacity:1}15%,100%{opacity:0;transform:scale(1)}}
+.overlay{position:fixed;inset:0;z-index:-2;background:linear-gradient(135deg,rgba(0,0,0,.83),rgba(0,28,48,.72),rgba(0,0,0,.87))}
+.particles{position:fixed;inset:0;z-index:-1;pointer-events:none;overflow:hidden}
+.particles span{position:absolute;bottom:-10px;width:4px;height:4px;background:var(--cyan);border-radius:50%;box-shadow:0 0 12px var(--cyan);animation:float 9s linear infinite}
+.particles span:nth-child(1){left:10%}.particles span:nth-child(2){left:25%;animation-delay:2s}.particles span:nth-child(3){left:40%;animation-delay:4s}.particles span:nth-child(4){left:60%;animation-delay:1s}.particles span:nth-child(5){left:75%;animation-delay:3s}.particles span:nth-child(6){left:90%;animation-delay:5s}
+@keyframes float{to{transform:translate(50px,-110vh);opacity:0}}
+.top-actions{position:fixed;top:12px;right:12px;z-index:20}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:7px;padding:10px 14px;color:white;background:#006c96;border:1px solid rgba(0,234,255,.6);border-radius:10px;cursor:pointer;font-weight:600;font-size:13px;text-decoration:none;transition:.2s}
+.btn:hover{background:#008fc4;box-shadow:0 0 15px rgba(0,234,255,.3);transform:translateY(-2px)}
+.btn.secondary{background:#172d40}
+.hero{min-height:100vh;min-height:100svh;display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center;padding:75px 18px 40px}
+.logo img{width:110px;height:110px;object-fit:contain;filter:drop-shadow(0 0 15px var(--cyan));margin-bottom:15px}
+.title{font-family:"Share Tech Mono",monospace;color:#75f7ff;font-size:clamp(28px,5vw,48px);line-height:1.3;letter-spacing:3px;text-shadow:0 0 15px #00bfff;overflow-wrap:anywhere}
+.subtitle{margin:12px 0 10px;font-size:clamp(14px,2.5vw,21px);letter-spacing:2px;color:#e0faff}
+.intro{max-width:650px;color:#c5eaf6;font-size:13px;line-height:1.8;margin:0 0 24px}
+.menu{width:min(100%,850px);display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:13px}
+.menu-card{background:rgba(0,30,48,.86);border:1px solid rgba(0,234,255,.8);border-radius:16px;padding:17px;box-shadow:0 8px 28px rgba(0,0,0,.22);backdrop-filter:blur(7px);transition:.25s}
+.menu-card:hover{border-color:#fff;box-shadow:0 0 24px rgba(0,234,255,.24);transform:translateY(-3px)}
+.menu-card h2{font-family:"Share Tech Mono",monospace;color:#8df8ff;font-size:clamp(16px,2.3vw,20px);margin-bottom:8px}
+.menu-card p{font-size:12px;color:#c5eaf6;line-height:1.7;margin-bottom:13px}
+.card-actions{display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.card-actions .btn{flex:1 1 130px}
+.task-btn{background:#08774f;border-color:#3af0b0}
+.task-btn:hover{background:#0a9666}
+footer{padding:18px 12px 30px;text-align:center;color:#c6f8ff;font-size:11px;letter-spacing:1px;line-height:1.8}
+.music{position:fixed;right:12px;bottom:12px;z-index:20}
+@media(max-width:600px){.hero{padding:70px 13px 35px}.logo img{width:82px;height:82px}.title{letter-spacing:1px}.menu{grid-template-columns:1fr;gap:10px}.menu-card{padding:14px}.btn{font-size:12px;padding:10px}.top-actions{top:8px;right:8px}.music{right:8px;bottom:8px}.intro{font-size:12px}}
+@media(prefers-reduced-motion:reduce){*,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;scroll-behavior:auto!important;transition:none!important}}
+@media print{.slideshow,.overlay,.particles,.top-actions,.music{display:none!important}body{background:white;color:black}.menu-card{break-inside:avoid;background:white;color:black;border:1px solid #aaa;box-shadow:none}.menu-card h2,.menu-card p,.intro,.subtitle,footer{color:black}.btn{border:1px solid #888;color:black;background:white}}
+</style>
+</head>
+<body>
+<div class="slideshow" aria-hidden="true">
+<div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div><div class="slide"></div>
+</div>
+<div class="overlay"></div>
+<div class="particles" aria-hidden="true"><span></span><span></span><span></span><span></span><span></span><span></span></div>
+<div class="top-actions"><button class="btn" id="fullscreenBtn" type="button" onclick="toggleFullscreen()">⛶ LAYAR PENUH</button></div>
+<header class="hero">
+<div class="logo"><img src="logo.png" alt="Logo Eskul Informatika" onerror="this.style.display='none'"></div>
+<h1 class="title">HALLO</h1>
+<p class="subtitle">INFORMATIKA VIII</p>
+<p class="intro">Selamat datang di pusat pembelajaran Informatika. Pilih materi untuk mulai belajar, lalu tekan <b>KERJAKAN TUGAS</b> untuk membuka halaman tugas setiap materi.</p>
+<nav class="menu" aria-label="Enam menu pembelajaran">
+<!-- LINK 1: alamat dipertahankan dari kode awal -->
+<section class="menu-card">
+<h2>BERPIKIR KOMPUTASIONAL</h2>
+<p>TP: Menjelaskan konsep berpikir komputasional dan menerapkannya dalam kehidupan sehari-hari.</p>
+<div class="card-actions">
+<a class="btn" href="https://nesasinkuberaksi-source.github.io/INFORBKMODUL/">📘 BUKA MATERI</a>
+<a class="btn task-btn" href="https://nesasinkuberaksi-source.github.io/STSINFOR8/">✍️ KERJAKAN TUGAS</a>
+</div>
+</section>
+<!-- Ganti alamat BAB1/index.html dan BAB1/tugas.html sesuai lokasi file Anda -->
+<section class="menu-card">
+<h2>FUNGSI DAN HIMPUNAN</h2><p>TP: Memahami fungsi input, proses, output, dan fungsi dalam pemrograman serta membuat program sederhana untuk menghitung nilai rata-rata, diskon, dan operasi himpunan (gabungan, irisan, dan selisih).</p>
+<div class="card-actions"><a class="btn" href="https://ekaaminhidayat.github.io/INFORMATIKA/">📘 BUKA MATERI</a><a class="btn task-btn" href="BAB1/tugas.html">✍️ KERJAKAN TUGAS</a></div>
+</section>
+<section class="menu-card">
+<h2>PRAKTIK DAN SISTEM OPERASI</h2><p>TP: Mendeskripsikan perangkat keras (hardware) dan perangkat lunak (software) komputer beserta fungsinya, menjelaskan cara kerja komputer, serta melakukan konversi bilangan desimal ke heksadesimal dan sebaliknya.</p>
+<div class="card-actions"><a class="btn" href="BAB2/index.html">📘 BUKA MATERI</a><a class="btn task-btn" href="BAB2/tugas.html">✍️ KERJAKAN TUGAS</a></div>
+</section>
+<section class="menu-card">
+<h2>TIK</h2><p>TP: Memahami objek dan fitur pada perangkat lunak aplikasi serta memanfaatkan aplikasi peramban untuk mencari informasi secara efektif di internet.</p>
+<div class="card-actions"><a class="btn" href="BAB3/index.html">📘 BUKA MATERI</a><a class="btn task-btn" href="BAB3/tugas.html">✍️ KERJAKAN TUGAS</a></div>
+</section>
+<section class="menu-card">
+<h2>A CODE PRAKTIK</h2><p>TP: Membuat game sederhana menggunakan bahasa pemrograman yang dipelajari.</p>
+<div class="card-actions"><a class="btn" href="BAB4/index.html">📘 BUKA MATERI</a><a class="btn task-btn" href="BAB4/tugas.html">✍️ KERJAKAN TUGAS</a></div>
+</section>
+<section class="menu-card">
+<h2>JARINGAN KOMPUTER DAN INTERNET</h2><p>TP: Memahami jenis-jenis jaringan komputer, konfigurasi dan routing, jenis-jenis sinyal, serta menerapkan cara menghubungkan internet ke ponsel dan perangkat lain secara aman melalui koneksi kabel maupun nirkabel.</p>
+<div class="card-actions"><a class="btn" href="BAB5/index.html">📘 BUKA MATERI</a><a class="btn task-btn" href="BAB5/tugas.html">✍️ KERJAKAN TUGAS</a></div>
+</section>
+</nav>
+</header>
+<audio id="bgmusic" loop preload="none"><source src="musik.mp3" type="audio/mpeg"></audio>
+<div class="music"><button class="btn" id="musicBtn" onclick="toggleMusic()">🎵 MUSIK: OFF</button></div>
+<footer>© 2026 INFORMATIKA | TIM KODING GANTENG KALEM</footer>
+<script>
+const music=document.getElementById("bgmusic"),musicBtn=document.getElementById("musicBtn");
+async function toggleMusic(){if(music.paused){try{await music.play();musicBtn.textContent="🎵 MUSIK: ON"}catch(error){alert("Musik belum dapat diputar. Pastikan file ASTRID.mp3 tersedia.");musicBtn.textContent="🎵 COBA LAGI"}}else{music.pause();musicBtn.textContent="🎵 MUSIK: OFF"}}
+async function toggleFullscreen(){try{if(!document.fullscreenElement){if(document.documentElement.requestFullscreen)await document.documentElement.requestFullscreen()}else await document.exitFullscreen()}catch(error){console.log("Mode fullscreen tidak tersedia di browser ini.")}}
+document.addEventListener("fullscreenchange",()=>{document.getElementById("fullscreenBtn").textContent=document.fullscreenElement?"⛶ KELUAR LAYAR PENUH":"⛶ LAYAR PENUH"});
+</script>
+</body>
+</html>
